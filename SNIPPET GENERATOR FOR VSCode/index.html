@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snippet Generator | VSCode</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="/vscode.png">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Custom scrollbar styles for all scrollable elements */
+    * {
+      scrollbar-width: thin;
+      /* For Firefox */
+      scrollbar-color: #43597e #000000;
+      /* Scrollbar thumb and track color */
+    }
+
+    /* Webkit browsers (Chrome, Safari, Edge) */
+    *::-webkit-scrollbar {
+      width: 4px;
+      /* Scrollbar width */
+    }
+
+    *::-webkit-scrollbar-track {
+      background: #000000;
+      /* Track color */
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: #000000;
+      /* Thumb color */
+      border-radius: 10px;
+      /* Rounded corners for the thumb */
+    }
+  </style>
+
+</head>
+
+<body class="w-full h-screen bg-[#1E2836]">
+
+  <!-- this is for the nav bar : start  -->
+  <nav class="p-4 bg-gradient-to-b from-[#1F2937] to-[#162035] shadow-xl border-b-[0.25px] border-[#2D4D86]">
+    <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between">
+      <div
+        class="font-bold text-2xl sm:text-3xl mb-2 sm:mb-0 text-[#0098ff] hover:text-[#0098ff] transition-colors duration-300">
+        Snippet Generator For VSCode
+      </div>
+      <div class="flex items-center space-x-4 text-sm sm:text-base text-gray-300">
+        <span class="hover:text-[#007ACC] transition-colors duration-300">
+          Made By <a href="#"
+            class="text-[#007ACC] hover:text-[#0098ff] underline underline-offset-4 font-extrabold">Dev Trivedi</a>
+        </span>
+        <span class="hidden sm:inline text-gray-600 underline-offset-4 font-extrabold">|</span>
+        <span class="hover:text-[#007ACC] transition-colors duration-300 underline-offset-4">
+          Source Code on <a href="#" class="text-[#007ACC] hover:text-[#0098ff] underline font-extrabold">GitHub</a>
+        </span>
+      </div>
+    </div>
+  </nav>
+  <!-- this is for the nav bar : end  -->
+
+  <!-- main section : starts  -->
+  <main
+    class="bg-gradient-to-b from-[#162035] to-[#1F2937] w-full h-[90%] flex flex-col md:flex-row md:gap-4 px-4 py-4">
+    <!-- Left part : starts  -->
+    <div class="bg-[#2d4d86] rounded-sm w-full md:w-1/2 h-full mx-auto md:mx-0 flex flex-col px-2 py-2">
+
+      <!-- input:starts -->
+      <div class="w-full flex flex-row gap-2 mb-2">
+        <input type="text" id="input-description"
+          class="w-1/2 hover:bg-[#ecedff] focus:bg-[#b2e0ff] transition-all duration-300 rounded-sm px-4 py-5 max-h-8"
+          placeholder="Description...">
+        <input type="text" id="input-trigger"
+          class="w-1/2 hover:bg-[#ecedff] focus:bg-[#b2e0ff] transition-all duration-300 rounded-sm px-4 py-5 max-h-8"
+          placeholder="Tab Trigger...">
+      </div>
+
+      <textarea placeholder="Your Code..." name="" id="input-usercode"
+        class="h-full hover:bg-[#ecedff] focus:bg-[#b2e0ff] transition-all duration-300 px-4 rounded-sm py-5"></textarea>
+
+
+      <!-- input:ends -->
+
+
+    </div>
+    <!-- Left part : ends  -->
+
+    <!-- Right part : starts -->
+    <div class="bg-[#2d4d86] relative rounded-sm w-full md:w-1/2 h-full mx-auto md:mx-0 flex flex-col px-2 py-2">
+
+
+      <!-- the header part for VSCode : starts  -->
+      <div class="w-full flex flex-row gap-2 mb-2">
+        <div
+          class="md:text-2xl rounded-sm w-full bg-[#1B2536] text-[#0098FF] font-bold max-h-8 px-4 py-5 text-center flex justify-center items-center">
+          VSCode Snippet Code
+        </div>
+      </div>
+
+      <textarea name="" id="output-code" readonly
+        class="h-full hover:bg-[#ecedff] focus:bg-[#b2e0ff] transition-all duration-300 rounded-sm px-4 py-5"></textarea>
+
+
+      <!-- the header part for VSCode : ends  -->
+
+      <button id="copy-button"
+        class="absolute bg-[#1B2536] text-white font-bold px-7 py-3 rounded-lg right-6 bottom-5">Copy</button>
+
+    </div>
+    <!-- Right part : ends -->
+
+  </main>
+  <!-- main section : ends  -->
+
+
+  <script src="script.js"></script>
+
+
+
+</body>
+
+</html>
